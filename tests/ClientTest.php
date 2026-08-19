@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify\Tests;
+namespace Ngandu\Tinify\Tests;
 
-use Devscast\Tinify\Client;
-use Devscast\Tinify\Exception\InvalidUrlException;
-use Devscast\Tinify\Source;
-use Devscast\Tinify\Storage\Aws;
+use Ngandu\Tinify\Client;
+use Ngandu\Tinify\Exception\InvalidUrlException;
+use Ngandu\Tinify\Source;
+use Ngandu\Tinify\Storage\Aws;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use Symfony\Component\HttpClient\MockHttpClient;

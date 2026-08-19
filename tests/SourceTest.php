@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify\Tests;
+namespace Ngandu\Tinify\Tests;
 
-use Devscast\Tinify\Source;
+use Ngandu\Tinify\Source;
 use PHPUnit\Framework\TestCase;
 
 final class SourceTest extends TestCase

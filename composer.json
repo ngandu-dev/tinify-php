@@ -1,5 +1,5 @@
 {
-    "name": "devscast/tinify",
+    "name": "ngandu-dev/tinify",
     "description": "PHP client for the Tinify API. Tinify compresses your images intelligently. Read more at https://tinify.com.",
     "keywords": [
         "tinify",
@@ -11,22 +11,27 @@
     ],
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/ngandu-dev/tinify-php",
     "autoload": {
         "psr-4": {
-            "Devscast\\Tinify\\": "src/"
+            "Ngandu\\Tinify\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Devscast\\Tinify\\Tests\\": "tests/"
+            "Ngandu\\Tinify\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
             "name": "bernard-ng",
-            "email": "bernard@devscast.tech"
+            "email": "bernard@ngandu.dev"
         }
     ],
+    "support": {
+        "issues": "https://github.com/ngandu-dev/tinify-php/issues",
+        "source": "https://github.com/ngandu-dev/tinify-php"
+    },
     "minimum-stability": "stable",
     "require-dev": {
         "symfony/var-dumper": "^7.0|^8.0",
@@ -40,10 +45,11 @@
         "php": ">=8.4",
         "symfony/http-client": "^7.0|^8.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/devscast/tinify"
-        }
-    ]
+    "scripts": {
+        "format": ["php vendor/bin/ecs check --fix --ansi", "php vendor/bin/rector process --ansi"],
+        "lint": ["php vendor/bin/ecs check --ansi", "php vendor/bin/rector process --dry-run --ansi"],
+        "typecheck": "php vendor/bin/phpstan analyse --ansi",
+        "test": "php vendor/bin/phpunit --colors=always",
+        "quality": ["@lint", "@typecheck", "@test"]
+    }
 }

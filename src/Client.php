@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify;
+namespace Ngandu\Tinify;
 
-use Devscast\Tinify\Exception\InvalidUrlException;
-use Devscast\Tinify\Exception\NetworkException;
-use Devscast\Tinify\Storage\StorageInterface;
+use Ngandu\Tinify\Exception\InvalidUrlException;
+use Ngandu\Tinify\Exception\NetworkException;
+use Ngandu\Tinify\Storage\StorageInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\Retry\GenericRetryStrategy;
 use Symfony\Component\HttpClient\RetryableHttpClient;
@@ -16,8 +16,8 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 use Throwable;
 
 /**
- * @package Devscast\Tinify
- * @author bernard-ng <bernard@devscast.tech>
+ * @package Ngandu\Tinify
+ * @author bernard-ng <bernard@ngandu.dev>
  */
 class Client
 {

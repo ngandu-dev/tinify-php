@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify\Storage;
+namespace Ngandu\Tinify\Storage;
 
 /**
- * @package Devscast\Tinify\Storage
- * @author bernard-ng <bernard@devscast.tech>
+ * @package Ngandu\Tinify\Storage
+ * @author bernard-ng <bernard@ngandu.dev>
  */
 interface StorageInterface
 {

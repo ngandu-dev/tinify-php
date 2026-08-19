@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify\Tests;
+namespace Ngandu\Tinify\Tests;
 
-use Devscast\Tinify\Storage\Aws;
-use Devscast\Tinify\Storage\Gcs;
+use Ngandu\Tinify\Storage\Aws;
+use Ngandu\Tinify\Storage\Gcs;
 use PHPUnit\Framework\TestCase;
 
 final class StorageTest extends TestCase

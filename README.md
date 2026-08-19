@@ -1,19 +1,32 @@
 # Tinify PHP
 
-[![Latest Stable Version](http://poser.pugx.org/devscast/tinify/v)](https://packagist.org/packages/devscast/tinify) 
-[![Total Downloads](http://poser.pugx.org/devscast/tinify/downloads)](https://packagist.org/packages/devscast/tinify) 
-[![Latest Unstable Version](http://poser.pugx.org/devscast/tinify/v/unstable)](https://packagist.org/packages/devscast/tinify) 
-[![License](http://poser.pugx.org/devscast/tinify/license)](https://packagist.org/packages/devscast/tinify) 
-[![PHP Version Require](http://poser.pugx.org/devscast/tinify/require/php)](https://packagist.org/packages/devscast/tinify)
+[![Latest Stable Version](https://poser.pugx.org/ngandu-dev/tinify/version)](https://packagist.org/packages/ngandu-dev/tinify)
+[![Total Downloads](https://poser.pugx.org/ngandu-dev/tinify/downloads)](https://packagist.org/packages/ngandu-dev/tinify)
+[![Quality](https://github.com/ngandu-dev/tinify-php/actions/workflows/quality.yml/badge.svg)](https://github.com/ngandu-dev/tinify-php/actions/workflows/quality.yml)
+[![Tests](https://github.com/ngandu-dev/tinify-php/actions/workflows/test.yml/badge.svg)](https://github.com/ngandu-dev/tinify-php/actions/workflows/test.yml)
+[![License](https://poser.pugx.org/ngandu-dev/tinify/license)](https://packagist.org/packages/ngandu-dev/tinify)
 
 
 The Tinify API allows you to compress and optimize WebP, JPEG and PNG images. It is designed as a REST service. The client libraries in various languages make it very easy to interact with the Tinify API.
 
-## installation
+## Features
+
+- Compress WebP, JPEG, and PNG images
+- Resize images and preserve selected metadata
+- Store optimized images in Amazon S3 or Google Cloud Storage
+- Track monthly compression usage
+
+## Requirements
+
+- PHP 8.4 or later
+- Composer 2
+- A Tinify API key
+
+## Installation
 You can use the PHP client by installing the Composer package and adding it to your application’s dependencies:
 
 ```bash
-composer require devscast/tinify
+composer require ngandu-dev/tinify
 ```
 
 ## Authentication
@@ -22,7 +35,7 @@ You can [get an API key](https://tinypng.com/developers) by registering with you
 Always keep your API key secret!
 
 ```php
-use Devscast\Tinify\Client;
+use Ngandu\Tinify\Client;
 
 $tinify = new Client('yourtinifytoken');
 ```
@@ -31,7 +44,7 @@ All requests will be made over an encrypted [HTTPS](https://en.wikipedia.org/wik
 You can instruct the API client to make all requests over an HTTP proxy. Set the URL of your proxy server, which can optionally include credentials.
 
 ```php
-use Devscast\Tinify\Client;
+use Ngandu\Tinify\Client;
 
 $tinify = new Client(
     token: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
@@ -46,7 +59,7 @@ You can choose a local file as the source and write it to another file.
 ```php
 <?php
 
-use Devscast\Tinify\Client;
+use Ngandu\Tinify\Client;
 
 $tinify = new Client(token: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 
@@ -110,7 +123,7 @@ The method describes the way your image will be resized. The following methods a
 
 If the target dimensions are larger than the original dimensions, the image will not be scaled up. Scaling up is prevented in order to protect the quality of your images.
 
-# Preserving metadata
+## Preserving metadata
 You can request that specific metadata is copied from the uploaded image to the compressed version. Preserving copyright information, the GPS location and the creation date are currently supported. Preserving metadata adds to the compressed file size, so you should only preserve metadata that is important to keep.
 
 Preserving metadata will not count as an extra compression. However, in the background the image will be created again with the additional metadata.
@@ -211,9 +224,35 @@ $source->getCompressionCount();
 $tinify->toFile($source, path: '/home/tinify/pictures/test-compressed.png');
 ```
 
-## acknowledgement
+## Acknowledgements
 
 this package is a reimplementation of the tinify/tinify-php library, supporting PHP 8, rewritten with a design that removes static calls for a more object-oriented approach
 
 * [tinify/tinify-php](https://github.com/tinify/tinify-php)
 * [Tinify Documentation](https://tinypng.com/developers/reference)
+
+## Development
+
+```bash
+composer install
+composer format
+composer quality
+```
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
+
+## Security
+
+Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
+
+## License
+
+Released under the [MIT License](LICENSE).
+
+## Contributors
+
+<a href="https://github.com/ngandu-dev/tinify-php/graphs/contributors" title="Show all contributors">
+  <img src="https://contrib.rocks/image?repo=ngandu-dev/tinify-php" alt="Contributors" />
+</a>

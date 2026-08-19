@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify;
+namespace Ngandu\Tinify;
 
 /**
- * @package Devscast\Tinify
- * @author bernard-ng <bernard@devscast.tech>
+ * @package Ngandu\Tinify
+ * @author bernard-ng <bernard@ngandu.dev>
  */
 class Source
 {

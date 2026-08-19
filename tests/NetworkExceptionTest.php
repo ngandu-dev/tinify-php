@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify\Tests;
+namespace Ngandu\Tinify\Tests;
 
-use Devscast\Tinify\Exception\AccountException;
-use Devscast\Tinify\Exception\ClientException;
-use Devscast\Tinify\Exception\NetworkException;
-use Devscast\Tinify\Exception\ServerException;
+use Ngandu\Tinify\Exception\AccountException;
+use Ngandu\Tinify\Exception\ClientException;
+use Ngandu\Tinify\Exception\NetworkException;
+use Ngandu\Tinify\Exception\ServerException;
 use PHPUnit\Framework\TestCase;
 
 final class NetworkExceptionTest extends TestCase

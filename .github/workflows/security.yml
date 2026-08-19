@@ -1,31 +1,28 @@
-name: Test
+name: Security
 
 on:
   push:
     branches: [main, master]
   pull_request:
+  schedule:
+    - cron: "17 3 * * 1"
   workflow_dispatch:
 
 concurrency:
-  group: test-${{ github.workflow }}-${{ github.ref }}
+  group: security-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: read
 
 jobs:
-  test:
+  security:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        php-version: ["8.4", "8.5"]
     steps:
       - uses: actions/checkout@v6
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: "8.4"
           tools: composer:v2
           coverage: none
-      - uses: ramsey/composer-install@v3
-      - run: composer test
+      - run: composer audit --locked --no-interaction

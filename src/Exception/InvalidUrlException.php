@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Devscast\Tinify\Exception;
+namespace Ngandu\Tinify\Exception;
 
 use InvalidArgumentException;
 
 /**
- * @package Devscast\Tinify\Exception
- * @author bernard-ng <bernard@devscast.tech>
+ * @package Ngandu\Tinify\Exception
+ * @author bernard-ng <bernard@ngandu.dev>
  */
 class InvalidUrlException extends InvalidArgumentException
 {
